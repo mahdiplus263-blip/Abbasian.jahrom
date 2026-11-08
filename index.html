@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="وب‌سایت شخصی عباسیان؛ پروژه‌ها، بازی‌ها و گالری تصاویر">
+<meta name="theme-color" content="#030a18">
+<title>ABBASIAN | وب‌سایت شخصی</title>
+<style>
+:root{--bg:#030a18;--panel:#0b1830;--cyan:#00c8ff;--blue:#087bff;--white:#f5f8ff;--muted:#b8c5dc}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:#030a18;color:var(--white);font-family:Tahoma,Arial,sans-serif;line-height:1.8}
+a{color:inherit;text-decoration:none}
+button,input{font:inherit}
+.wrap{width:min(1540px,94%);margin:auto}
+header{position:sticky;top:0;z-index:20;background:rgba(2,8,19,.96);border-bottom:1px solid #087bff;box-shadow:0 5px 25px #007bff22;backdrop-filter:blur(14px)}
+nav{min-height:100px;display:flex;align-items:center;justify-content:space-between;gap:22px}
+.brand{display:flex;align-items:center;gap:14px;font-size:clamp(24px,3vw,43px);font-weight:1000;font-style:italic;letter-spacing:1px;text-shadow:0 0 15px #168cff}
+.brand .crown{font-size:clamp(35px,4vw,58px);color:#ffc744;text-shadow:0 0 18px #ffb000}
+.navlinks{display:flex;align-items:center;gap:clamp(10px,2vw,28px);flex-wrap:wrap}
+.navlinks a{padding:9px 14px;border:1px solid transparent;border-radius:28px;font-weight:bold;color:#e6edff;transition:.2s}
+.navlinks a:hover,.navlinks a.active{background:#087bff;border-color:#168bff;box-shadow:0 0 22px #087bff77}
+.search{display:flex;align-items:center;gap:8px;border:1px solid #63718c;border-radius:28px;padding:7px 13px;min-width:210px}
+.search input{width:100%;min-width:0;background:transparent;color:white;border:0;outline:0}
+.search button{border:0;background:none;color:white;cursor:pointer;font-size:20px}
+.hero{position:relative;overflow:hidden;min-height:435px;border-bottom:1px solid #087bff;background:
+ radial-gradient(ellipse at 12% 50%,#0069b7aa,transparent 40%),
+ radial-gradient(ellipse at 86% 22%,#633e88aa,transparent 35%),
+ linear-gradient(105deg,#031226 0%,#081b3b 48%,#171a3c 100%)}
+.hero:before{content:"";position:absolute;inset:0;background:
+ radial-gradient(circle at 12% 20%,#1abaff 0 1px,transparent 3px),
+ radial-gradient(circle at 25% 65%,#1abaff 0 1px,transparent 3px),
+ radial-gradient(circle at 72% 20%,#fff 0 1px,transparent 3px),
+ radial-gradient(circle at 90% 70%,#fff 0 1px,transparent 3px);
+ background-size:150px 120px,190px 160px,170px 140px,210px 170px;opacity:.75}
+.hero:after{content:"";position:absolute;left:-5%;right:-5%;bottom:-115px;height:250px;background:linear-gradient(180deg,transparent,#020817 78%),radial-gradient(ellipse at 50% 0,#123e6c,transparent 68%);border-radius:50%}
+.hero-grid{position:relative;z-index:1;min-height:435px;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:25px;padding:35px 0}
+.hero-art{text-align:center;direction:ltr;filter:drop-shadow(0 0 25px #007fff88)}
+.hero-art .bigcrown{font-size:clamp(85px,12vw,165px);line-height:.95;color:#ffc744;text-shadow:0 5px 0 #8e4e00,0 0 30px #ffb000}
+.hero-art strong{display:block;font-size:clamp(48px,8vw,105px);font-weight:1000;font-style:italic;letter-spacing:2px;color:#eaf5ff;-webkit-text-stroke:1px #7da9d5;text-shadow:0 5px 0 #203b60,0 0 22px #168bff}
+.hero-copy{text-align:center}
+.hero-copy h1{font-size:clamp(30px,4vw,55px);margin:0 0 8px}
+.blue{color:#00c8ff;text-shadow:0 0 20px #00aaff77}
+.hero-copy .welcome{font-size:clamp(17px,2vw,24px);font-weight:bold}
+.hero-copy p{font-size:clamp(15px,1.7vw,21px);max-width:600px;margin:18px auto;color:#e0e9fb}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;margin-top:18px;padding:11px 30px;border:2px solid #00c8ff;border-radius:30px;color:#00d5ff;font-weight:bold;background:#061b38cc;box-shadow:0 0 18px #00bfff55;transition:.2s}
+.btn:hover{background:#087bff;color:white;transform:translateY(-2px)}
+.feature-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;padding:22px 0 32px}
+.feature{min-height:205px;padding:17px 15px;text-align:center;border:1px solid var(--accent);border-radius:17px;background:linear-gradient(145deg,var(--tint),#071226 85%);box-shadow:inset 0 0 28px #ffffff08;transition:.2s}
+.feature:hover{transform:translateY(-5px);box-shadow:0 0 25px color-mix(in srgb,var(--accent),transparent 65%)}
+.feature .icon{font-size:44px;color:var(--accent);line-height:1.3;text-shadow:0 0 20px var(--accent)}
+.feature h2{font-size:22px;margin:5px 0}
+.feature p{margin:0;color:#e0e7f5}
+.feature .more{display:block;margin-top:12px;color:var(--accent);font-weight:bold}
+section.content{padding:54px 0;border-top:1px solid #0a3762}
+.section-title{text-align:center;font-size:30px;margin:0 0 8px}
+.section-sub{text-align:center;color:var(--muted);margin:0 0 26px}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px}
+.card{padding:22px;border:1px solid #1765a0;border-radius:16px;background:linear-gradient(145deg,#102440,#081426)}
+.card h3{margin:0 0 6px}.card p{color:var(--muted);margin:0}
+.project-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px;margin-top:25px}
+.project-photo{margin:0;overflow:hidden;border:1px solid #1765a0;border-radius:15px;background:#071426}
+.project-photo img{display:block;width:100%;height:auto;max-height:480px;object-fit:contain;background:#fff}
+.project-photo figcaption{padding:10px 14px;color:#d2def1}
+.about-box,.contact-box{padding:25px;border:1px solid #1765a0;border-radius:17px;background:linear-gradient(145deg,#102440,#081426)}
+.contact-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.contact-item{padding:16px;border:1px solid #24527d;border-radius:12px;background:#08172b}
+.contact-item strong{display:block;color:#00c8ff}
+.contact-item a{direction:ltr;unicode-bidi:embed;display:inline-block}
+footer{border-top:2px solid #087bff;box-shadow:0 -8px 25px #007bff22;padding:25px 0;color:#d1dced}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.footer-brand{font-size:20px;font-weight:bold;direction:ltr}
+.socials{display:flex;gap:12px;flex-wrap:wrap}
+.socials a{width:46px;height:46px;display:grid;place-items:center;border-radius:50%;background:#102440;border:1px solid #2b5b88;font-size:20px;transition:.2s}
+.socials a:hover{background:#087bff;transform:translateY(-3px)}
+#searchStatus{min-height:24px;text-align:center;color:#00d5ff}
+@media(max-width:900px){nav{padding:12px 0;flex-wrap:wrap;justify-content:center}.navlinks{justify-content:center}.search{min-width:min(100%,320px)}.feature-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-grid{grid-template-columns:1fr;gap:10px}.hero-art{order:2}.hero-copy{order:1}.hero-art .bigcrown{font-size:85px}.hero-art strong{font-size:55px}}
+@media(max-width:560px){.wrap{width:92%}.brand{font-size:26px}.navlinks{gap:5px}.navlinks a{font-size:13px;padding:6px 9px}.hero-grid{padding:35px 0}.hero{min-height:unset}.feature-grid,.cards,.project-gallery,.contact-grid{grid-template-columns:1fr}.feature{min-height:160px}.feature-grid{gap:13px}.section-title{font-size:25px}.footer-inner{justify-content:center;text-align:center}}
+</style>
+</head>
+<body>
+<header>
+ <nav class="wrap" aria-label="منوی اصلی">
+  <a class="brand" href="#home" aria-label="صفحه خانه"><span class="crown">♛</span><span>ABBASIAN</span></a>
+  <div class="navlinks">
+   <a class="active" href="#home">⌂ خانه</a>
+   <a href="#about">♟ درباره من</a>
+   <a href="#projects">🎮 پروژه‌ها</a>
+   <a href="#gallery">▧ گالری</a>
+   <a href="#contact">✉ تماس با من</a>
+  </div>
+  <form class="search" id="searchForm" role="search">
+   <input id="siteSearch" type="search" placeholder="جستجو در سایت..." aria-label="جستجو در سایت">
+   <button type="submit" aria-label="جستجو">⌕</button>
+  </form>
+ </nav>
+</header>
+
+<main id="home">
+ <section class="hero">
+  <div class="wrap hero-grid">
+   <div class="hero-art" aria-label="نشان عباسیان">
+    <div class="bigcrown">♛</div>
+    <strong>ABBASIAN</strong>
+   </div>
+   <div class="hero-copy">
+    <h1>سلام! من <span class="blue">عباسیان</span> هستم</h1>
+    <div class="welcome">به سایت شخصی من خوش آمدید!</div>
+    <p>اینجا جایی است برای معرفی خودم، ارائه پروژه‌ها و به اشتراک گذاشتن علایق و تجربیاتم.</p>
+    <a class="btn" href="#about">درباره من بیشتر بدانید　♟</a>
+   </div>
+  </div>
+ </section>
+
+ <div class="wrap feature-grid" aria-label="دسترسی سریع">
+  <a class="feature" style="--accent:#13baff;--tint:#0b2446" href="#games">
+   <div class="icon">🎮</div><h2>سرگرمی و بازی</h2><p>بازی‌های جذاب و سرگرم‌کننده</p><span class="more">مشاهده بیشتر ←</span>
+  </a>
+  <a class="feature" style="--accent:#31d56c;--tint:#102b25" href="#projects">
+   <div class="icon">‹/›</div><h2>پروژه‌ها</h2><p>پروژه‌های جالب و کاربردی</p><span class="more">مشاهده بیشتر ←</span>
+  </a>
+  <a class="feature" style="--accent:#ffb21c;--tint:#332313" href="#gallery">
+   <div class="icon">▧</div><h2>گالری تصاویر</h2><p>عکس‌ها و لحظات زیبا</p><span class="more">مشاهده بیشتر ←</span>
+  </a>
+  <a class="feature" style="--accent:#d66cff;--tint:#26153b" href="#about">
+   <div class="icon">★</div><h2>درباره من</h2><p>آشنایی بیشتر با من</p><span class="more">مشاهده بیشتر ←</span>
+  </a>
+ </div>
+
+ <section class="content" id="games">
+  <div class="wrap">
+   <h2 class="section-title">سرگرمی و بازی</h2>
+   <p class="section-sub">بازی‌های در حال ساخت و سرگرمی‌های سایت</p>
+   <article class="card">
+    <h3>🎮 بازی تیراندازی شبیه کانتر</h3>
+    <p>پروژه بازی مرورگری در حال آماده‌سازی است. پس از آماده شدن، لینک اجرای مستقیم بازی در همین بخش قرار می‌گیرد.</p>
+   </article>
+  </div>
+ </section>
+
+ <section class="content" id="projects">
+  <div class="wrap">
+   <h2 class="section-title">پروژه‌های من</h2>
+   <p class="section-sub">ایده‌ها و کارهایی که با دیگران به اشتراک می‌گذارم.</p>
+   <div class="cards">
+    <article class="card"><h3>🎮 ساخت بازی مرورگری</h3><p>یک بازی هیجان‌انگیز با الهام از سبک بازی‌های تیراندازی.</p></article>
+    <article class="card"><h3>🪵 نمونه پروژه چوبی</h3><p>تصاویر و نمونه‌کارهای قرارگرفته در گالری سایت.</p></article>
+   </div>
+  </div>
+ </section>
+
+ <section class="content" id="gallery">
+  <div class="wrap">
+   <h2 class="section-title">گالری تصاویر</h2>
+   <p class="section-sub">برای دیدن تصاویر پروژه‌ها، این بخش را مرور کنید.</p>
+   <div class="project-gallery">
+    <figure class="project-photo"><img src="images/wood-project-1.jpg" alt="تصویر اول از پروژه چوبی"><figcaption>تصویر اول پروژه</figcaption></figure>
+    <figure class="project-photo"><img src="images/wood-project-2.jpg" alt="تصویر دوم از پروژه چوبی"><figcaption>تصویر دوم پروژه</figcaption></figure>
+    <figure class="project-photo"><img src="images/food-pyramid.jpg" alt="هرم گروه‌های غذایی"><figcaption>هرم راهنمای گروه‌های غذایی</figcaption></figure>
+   </div>
+  </div>
+ </section>
+
+ <section class="content" id="about">
+  <div class="wrap about-box">
+   <h2 class="section-title">درباره عباسیان</h2>
+   <p class="section-sub" style="margin-bottom:0">این وب‌سایت شخصی متعلق به ABBASIAN است. اینجا می‌توانم خودم، علاقه‌مندی‌ها و کارهایم را معرفی کنم.</p>
+  </div>
+ </section>
+
+ <section class="content" id="contact">
+  <div class="wrap contact-box">
+   <h2 class="section-title">تماس با من</h2>
+   <p class="section-sub">برای ارتباط از راه‌های زیر استفاده کنید.</p>
+   <div class="contact-grid">
+    <div class="contact-item"><strong>ایمیل</strong><a href="mailto:mahdiplus263@gmail.com">mahdiplus263@gmail.com</a></div>
+    <div class="contact-item"><strong>تلفن</strong><a href="tel:+989936021691">۰۹۹۳ ۶۰۲ ۱۶۹۱</a></div>
+   </div>
+   <p class="section-sub" style="margin:20px 0 0">نشانی شبکه‌های اجتماعی هنوز در سایت ثبت نشده است.</p>
+  </div>
+ </section>
+</main>
+
+<footer>
+ <div class="wrap footer-inner">
+  <div class="socials">
+   <a href="mailto:mahdiplus263@gmail.com" aria-label="ایمیل">✉</a>
+   <a href="#contact" aria-label="تماس با من">▶</a>
+   <a href="#projects" aria-label="پروژه‌ها">⌘</a>
+   <a href="#home" aria-label="بازگشت به خانه">◎</a>
+  </div>
+  <div class="footer-brand">ABBASIAN　❤️　همیشه در کنار شما</div>
+  <div>© <span id="year"></span> ABBASIAN — تمامی حقوق محفوظ است.</div>
+ </div>
+</footer>
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+document.getElementById('searchForm').addEventListener('submit', function(e){
+ e.preventDefault();
+ const q = document.getElementById('siteSearch').value.trim().toLocaleLowerCase('fa');
+ const sections = Array.from(document.querySelectorAll('main section[id]'));
+ if(!q){document.getElementById('searchStatus')?.remove();return;}
+ const match = sections.find(s => s.innerText.toLocaleLowerCase('fa').includes(q));
+ if(match){match.scrollIntoView({behavior:'smooth'});}
+ else {alert('موردی با این عبارت پیدا نشد. عبارت دیگری را جستجو کنید.');}
+});
+document.querySelectorAll('.navlinks a').forEach(a => a.addEventListener('click', function(){
+ document.querySelectorAll('.navlinks a').forEach(x=>x.classList.remove('active'));
+ this.classList.add('active');
+}));
+</script>
+</body>
+</html>
